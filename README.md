@@ -1,104 +1,107 @@
-# Super Trunfo de Países — Comparador de Cartas
+# Super Trunfo de Países — Comparação com Dois Atributos
 
-Este programa em C simula a comparação de cartas do jogo **Super Trunfo**, utilizando países como tema. O usuário insere os dados de dois países e, em seguida, escolhe um atributo para comparar, recebendo o resultado indicando qual país vence ou se houve empate.
+Este programa em C simula uma rodada avançada do jogo **Super Trunfo**, permitindo comparar duas cartas de países usando **dois atributos diferentes** escolhidos pelo jogador. O sistema compara cada atributo individualmente, depois soma os valores dos atributos escolhidos para decidir o vencedor final.
 
 ## 🧠 Funcionalidades
 
-* Entrada de dados para dois países
-* Atributos comparados:
+* Escolha de **dois atributos diferentes** para comparação
+* **Menu dinâmico**: o segundo atributo não pode ser igual ao primeiro
+* Atributos comparáveis:
 
   * População
   * Área
   * PIB
-  * Número de Pontos Turísticos
-  * Densidade Demográfica (calculada automaticamente)
-* Sistema de menu para escolher o atributo a ser comparado
-* Exibição do vencedor ou empate
+  * Pontos turísticos
+  * Densidade demográfica (menor valor vence)
+* **Comparação individual e soma final dos atributos**
+* Tratamento de erros (opções inválidas)
+* Exibição completa do resultado
 
 ## 🛠 Como compilar e executar
 
-### Pré-requisitos
+### ✅ Pré-requisitos
 
-* Compilador **GCC** instalado
+* Compilador GCC instalado
 
-### Passos
+### 📦 Compilar
 
-1. Compile o programa:
-
-   ```bash
-   ```
-
+```bash
 gcc logicaSuperTrunfo.c -o supertrunfo
+```
 
-````
-2. Execute o programa:
-   ```bash
+### ▶️ Executar
+
+```bash
 ./supertrunfo
-````
-
-## 📌 Exemplo de uso
-
-### Entrada do usuário
-
-```
-Digite o nome do páis da carta 1: Brasil
-Digite a população do páis da carta 1: 210000000
-Digite a área do páis da carta 1: 8516000
-Digite o PIB do páis da carta 1: 1800
-Digite o número de pontos turísticos do páis da carta 1: 20
-
-Digite o nome do páis da carta 2: Argentina
-Digite a população do páis da carta 2: 45000000
-Digite a área do páis da carta 2: 2780000
-Digite o PIB do páis da carta 2: 450
-Digite o número de pontos turísticos do páis da carta 2: 15
 ```
 
-### Menu exibido
+## 📋 Exemplo de uso (menu)
+
+Ao iniciar, você verá:
 
 ```
 ***Menu de comparação das cartas***
+
 Escolha um atributo para comparar:
 1. População
 2. Área
 3. PIB
 4. Número de Pontos Turísticos
 5. Densidade Demográfica
-Opção:
+Opção: _
 ```
 
-### Resultado esperado (exemplo)
+Após escolher, por exemplo, **1 (População)**, as opções do segundo menu serão:
 
 ```
-Atributo escolhido: População.
-Carta 1 - Brasil: 210000000 habitantes
-Carta 2 - Argentina: 45000000 habitantes
-Brasil vence com uma população de 210000000, maior que Argentina.
+2 - Area
+3 - PIB
+4 - Pontos Turisticos
+5 - Densidade Demografica
+Opção: _
 ```
 
-## 📎 Atributos disponíveis para comparação
+> O programa remove automaticamente a opção já usada.
 
-| Código | Atributo              | Tipo                     |
-| ------ | --------------------- | ------------------------ |
-| 1      | População             | Quanto maior, melhor     |
-| 2      | Área                  | Quanto maior, melhor     |
-| 3      | PIB                   | Quanto maior, melhor     |
-| 4      | Pontos Turísticos     | Quanto maior, melhor     |
-| 5      | Densidade Demográfica | **Quanto menor, melhor** |
+## ✅ Exemplos de atributos comparados
 
-## ✅ Observações
+Se você escolher:
 
-* Este programa segue a lógica do jogo Super Trunfo.
-* A densidade demográfica é calculada como:
+* **Primeiro atributo:** População
+* **Segundo atributo:** PIB
+
+O programa mostrará:
 
 ```
-densidade = população / área
+Comparação dos atributos escolhidos:
+População: Brasil vs Argentina
+PIB: Brasil vs Argentina
+
+Soma dos atributos escolhidos:
+Brasil -> população + PIB = valor
+Argentina -> população + PIB = valor
+
+Resultado final: Brasil vence!
 ```
+
+## 📎 Atributos disponíveis
+
+| Código | Atributo              | Regra           |
+| ------ | --------------------- | --------------- |
+| 1      | População             | Maior vence     |
+| 2      | Área                  | Maior vence     |
+| 3      | PIB                   | Maior vence     |
+| 4      | Pontos Turísticos     | Maior vence     |
+| 5      | Densidade Demográfica | **Menor vence** |
+
+## 💬 Observações
+
+* O programa já usa valores pré-definidos para **Brasil e Argentina**
+* Não é permitido repetir o atributo na segunda escolha
+* Foram tratadas as **20 combinações possíveis** de atributos
 
 ## 👨‍💻 Autor
 
-Projeto para prática de programação em C.
+Projeto de estudo sobre condicionais avançadas e lógica de jogo em C.
 
----
-
-Sinta-se à vontade para melhorar o código e estender o jogo! 🎮🇧🇷
+Bom jogo e bons estudos! 🇧🇷⚔️🇦🇷
